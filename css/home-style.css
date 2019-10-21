@@ -1,15 +1,28 @@
-
+/*  Centring the Box */
 #breifBox{
     text-align: center;
     margin: 10px 120px 0px 120px;
     margin-bottom:unset;
 }
 
+/* Centering Carousel Item  */
 .card-img-top {
     height: 35vh;
 }
 
 .carousel-inner img {
     margin: auto;
+}
+
+/* Bottom Margin */
+
+#playButton{
+    margin-bottom: 15px;
+}
+
+/* Resizing Cards */
+.card-deck {
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
