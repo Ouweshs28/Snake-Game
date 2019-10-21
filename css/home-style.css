@@ -1,12 +1,15 @@
-.bg-snake-img {
-    /* The image used */
-    background-image: url("../img/snake-section.jpg");
 
-    /* Full height */
-    height: 75vh;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#breifBox{
+    text-align: center;
+    margin: 10px 120px 0px 120px;
+    margin-bottom:unset;
 }
+
+.card-img-top {
+    height: 35vh;
+}
+
+.carousel-inner img {
+    margin: auto;
+}
+
