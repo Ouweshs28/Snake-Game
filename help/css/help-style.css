@@ -1,0 +1,32 @@
+/* Resizing the card Images */
+
+.card-img-top {
+    width: 100%;
+    height: 50%;
+}
+
+/* Adding Margin in cards */
+
+#cardHelp{
+    margin: 5%;
+}
+
+/* Gap between image and text */
+.helpText{
+    margin-top: 5%;
+}
+
+.card-deck .card {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+/*Gap Between the buttons */
+
+#buttonHelpSection{
+    margin-right: 10%;
+}
+
+.helpButton{
+    width:10% ;
+}
