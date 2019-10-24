@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Registration</title>
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <!-- Bootstrap -->
+    <link href="../common/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Common CSS -->
+    <link href="../common/css/common.css" rel="stylesheet" type="text/css">
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- Main -->
+    <link href="css/register-style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--Navigation Bar-->
+<nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="../index.html">
+        <img alt="snake icon" class="d-inline-block align-top" src="../common/img/snake-icon.png"> Snake
+    </a>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="btn btn-default navbar-btn" type="button" href="../index.html">Home</a>
+            <a class="btn btn-default navbar-btn" type="button">Scores</a>
+            <a class="btn btn-default navbar-btn" type="button">Sign in</a>
+        </li>
+    </ul>
+</nav>
+<div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w780">
+        <div class="card card-3">
+            <div class="card-heading"></div>
+            <div class="card-body">
+                <h2 class="title">Registration Info</h2>
+                <form method="POST">
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Name" name="name">
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Username" name="username">
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3 js-datepicker" type="text" placeholder="Birth Date" name="birthday">
+                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                    </div>
+                    <div class="input-group">
+                        <div class="rs-select2 js-select-simple select--no-search">
+                            <select name="gender">
+                                <option disabled="disabled" selected="selected">Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="select-dropdown"></div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="text" placeholder="Phone" name="phone">
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="password" placeholder="Password" name="password">
+                    </div>
+                    <div class="input-group">
+                        <input class="input--style-3" type="password" placeholder="Confirm Password" name="confirmpassword">
+                    </div>
+                    <div class="p-t-10">
+                        <button class="btn-register btn--pill btn--green" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../common/js/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../common/js/bootstrap.min.js"></script>
+<!-- Jquery JS-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="vendor/select2/select2.min.js"></script>
+<script src="vendor/datepicker/moment.min.js"></script>
+<script src="vendor/datepicker/daterangepicker.js"></script>
+<!-- Main JS-->
+<script src="js/global.js"></script>
+</body>
+</html>
