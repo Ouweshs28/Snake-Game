@@ -8,6 +8,11 @@
 /* Centering Carousel Item  */
 .card-img-top {
     height: 35vh;
+    width: 80%;
+    padding-top: 4%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .carousel-inner img {
