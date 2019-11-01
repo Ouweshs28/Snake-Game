@@ -1,3 +1,9 @@
+/*  Nav Buttons */
+
+.navButton{
+    border-radius: 35px!important;
+}
+
 /*  Centring the Box */
 #breifBox{
     text-align: center;
@@ -6,6 +12,7 @@
 }
 
 /* Centering Carousel Item  */
+
 .card-img-top {
     height: 35vh;
     width: 80%;
@@ -14,9 +21,17 @@
     margin-left: auto;
     margin-right: auto;
 }
-
+.carousel-inner{
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
 .carousel-inner img {
     margin: auto;
+}
+
+/*   Resizing IMG Carousel   */
+.carousel-item{
+    max-height: 50vh;
 }
 
 /* Bottom Margin */
@@ -29,6 +44,10 @@
 .card-deck {
     margin-right:10%;
     margin-left:10%;
+}
+
+#aboutGame{
+    padding: 2%;
 }
 
 
