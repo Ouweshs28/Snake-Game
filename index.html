@@ -10,18 +10,20 @@
     <link href="common/css/common.css" rel="stylesheet" type="text/css">
     <!-- Home Style -->
     <link href="css/home-style.css" rel="stylesheet" type="text/css">
+    <!-- Snake Fav ICON -->
+    <link rel="shortcut icon" type="image/png" href="common/img/snake_icon.ico"/>
 </head>
 <body>
 <!--Navigation Bar-->
-<nav class="navbar fixed-top navbar-dark bg-dark">
+<nav class="navbar fixed-top" id="navBar">
     <a class="navbar-brand" href="index.html">
         <img alt="snake icon" class="d-inline-block align-top" src="common/img/snake-icon.png"> Snake
     </a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="btn btn btn-secondary navbar-btn active navButton" type="button" href="index.html">Home</a>
-            <a class="btn btn btn-secondary navbar-btn navButton" type="button" href="score/score.html">Scores</a>
-            <a class="btn btn btn-secondary navbar-btn navButton" type="button" href="login/login.html">Sign in</a>
+            <a class="btn navbar-btn navButton" type="button" id="activeNavBtn" href="index.html">Home</a>
+            <a class="btn navbar-btn navButton" type="button" href="score/score.html">Scores</a>
+            <a class="btn navbar-btn navButton" type="button" href="login/login.html">Sign in</a>
         </li>
     </ul>
 </nav>

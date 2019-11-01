@@ -2,14 +2,38 @@
 
 .navButton{
     border-radius: 35px!important;
+    background-color: #007EA7;
+    border-color: #003459;
 }
+
+#activeNavBtn{
+    background-color: #00171F;
+    color: #FFFFFF;
+}
+
+
 
 /*  Centring the Box */
 #breifBox{
     text-align: center;
     margin: 10px 120px 0px 120px;
-    margin-bottom:unset;
+    background-color: #00A8E8;
 }
+
+/* Box Text*/
+
+.card-title{
+    font-weight: bolder;
+    color: #1b1e21;
+}
+
+.card-text:last-child {
+    color: #00171F;
+    font-size: larger;
+    font-style: italic;
+}
+
+
 
 /* Centering Carousel Item  */
 
@@ -46,8 +70,12 @@
     margin-left:10%;
 }
 
+.card {
+    background-color: #73B8CF;
+}
 #aboutGame{
     padding: 2%;
+    background-color:#00171F;
 }
 
 
