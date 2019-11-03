@@ -76,7 +76,7 @@ outputNavBar("Home");
         </div>
         <div class="card-footer">
             <div class="col text-center">
-                <a class="btn btn-primary" type="button" href="help/help.html">Find out more</a>
+                <a class="btn btn-primary" type="button" href="help/help.php">Find out more</a>
             </div>
         </div>
     </div>
@@ -88,7 +88,7 @@ outputNavBar("Home");
         </div>
         <div class="card-footer">
             <div class="col text-center">
-                <a class="btn btn-primary" type="button" href="score/score.html">View top players</a>
+                <a class="btn btn-primary" type="button" href="score/score.php">View top players</a>
             </div>
         </div>
     </div>
@@ -98,5 +98,5 @@ outputNavBar("Home");
 
 </footer>
 <?php
-generateCommonJS();
+generateCommonJS("home");
 ?>

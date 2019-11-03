@@ -9,13 +9,23 @@ function generateHeader($pageTitle,$pagecss){
     echo '<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->';
     echo '<title>' . $pageTitle . '</title>';
     echo '<!-- Bootstrap -->';
-    echo '<link href="common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
-    echo '<!-- Common CSS -->';
-    echo '<link href="common/css/common.css" rel="stylesheet" type="text/css">';
-    echo '<!-- '. $pageTitle .'CSS -->';
-    echo '<link href="css/'.$pagecss.'-style.css" rel="stylesheet" type="text/css">';
-    echo ' <!-- Snake Fav ICON -->';
-    echo '<link rel="shortcut icon" type="image/png" href="common/img/snake_icon.ico"/>';
+    if($pagecss=='home') {
+        echo '<link href="common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
+        echo '<!-- Common CSS -->';
+        echo '<link href="common/css/common.css" rel="stylesheet" type="text/css">';
+        echo '<!-- ' . $pageTitle . 'CSS -->';
+        echo '<link href="css/' . $pagecss . '-style.css" rel="stylesheet" type="text/css">';
+        echo ' <!-- Snake Fav ICON -->';
+        echo '<link rel="shortcut icon" type="image/png" href="common/img/snake_icon.ico"/>';
+    }else{
+        echo '<link href="../common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
+        echo '<!-- Common CSS -->';
+        echo '<link href="../common/css/common.css" rel="stylesheet" type="text/css">';
+        echo '<!-- ' . $pageTitle . 'CSS -->';
+        echo '<link href="css/' . $pagecss . '-style.css" rel="stylesheet" type="text/css">';
+        echo ' <!-- Snake Fav ICON -->';
+        echo '<link rel="shortcut icon" type="image/png" href="../common/img/snake_icon.ico"/>';
+    }
 }
 
 //Closes head
@@ -31,23 +41,30 @@ function outputNavBar($pageName){
    //  Common Navigation Part
     echo '<!--Navigation Bar-->';
     echo '<nav class="navbar fixed-top" id="navBar">';
-    echo '<a class="navbar-brand" href="index.html">
+    if($pageName=='Home'){
+        echo '<a class="navbar-brand" href="index.php">
         <img alt="snake icon" class="d-inline-block align-top" src="common/img/snake-icon.png"> Snake
     </a>';
+    }else{
+        echo '<a class="navbar-brand" href="../index.php">
+        <img alt="snake icon" class="d-inline-block align-top" src="../common/img/snake-icon.png"> Snake
+    </a>';
+    }
+
     echo '<ul class="navbar-nav ml-auto">
         <li class="nav-item">';
-    
+
     //Array of pages to link to
     $linkNames = array("Home", "Score", "Login");
     $linkFolderHome = array( "","score/", "login/");
     $linkFolder = array("../", "../score/", "../login/");
     $linkFiles = array("index.php", "score.php", "login.php");
-    
+
 
     for($x = 0; $x < count($linkNames); $x++){
         echo '<a class="btn navbar-btn navButton" type="button"';
         if($linkNames[$x] == $pageName){
-            echo 'id="activeNavBtn';
+            echo 'id="activeNavBtn"';
         }
         if ($pageName=='Home'){
             if($x==0){
@@ -65,11 +82,19 @@ function outputNavBar($pageName){
 </nav>';
 }
 
-function generateCommonJS(){
-    echo '<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->';
-    echo '<script src="common/js/jquery/jquery.min.js"></script>';
-    echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
-    echo '<script src="common/js/bootstrap/bootstrap.min.js"></script>';
+function generateCommonJS($pagecss){
+    if($pagecss=='home') {
+        echo '<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->';
+        echo '<script src="common/js/jquery/jquery.min.js"></script>';
+        echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
+        echo '<script src="common/js/bootstrap/bootstrap.min.js"></script>';
+    }else{
+        echo '<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->';
+        echo '<script src="../common/js/jquery/jquery.min.js"></script>';
+        echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
+        echo '<script src="../common/js/bootstrap/bootstrap.min.js"></script>';
+
+    }
     echo '</html>';
 }
 
