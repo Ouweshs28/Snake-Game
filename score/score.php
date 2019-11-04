@@ -4,7 +4,6 @@ include('../common/common.php');
 
 //Output header and navigation
 generateHeader("Snake- Leaderboard","score");
-closeHead();
 outputNavBar("Score");
 ?>
 

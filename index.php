@@ -4,7 +4,6 @@ include('common/common.php');
 
 //Output header and navigation
 generateHeader("Snake -Home","home");
-closeHead();
 outputNavBar("Home");
 ?>
 <!-- Carousel -->
@@ -52,7 +51,7 @@ outputNavBar("Home");
 </div>
 <!-- Center Play Button -->
 <div id="playButton" class="col text-center">
-    <a class="btn btn-primary col-md-2" type="button" href="play/play.html">Play</a>
+    <a class="btn btn-primary col-md-2" type="button" href="play/play.php">Play</a>
 </div>
 <!-- Cards section  -->
 <div class="card-deck">
@@ -64,7 +63,7 @@ outputNavBar("Home");
         </div>
         <div class="card-footer">
             <div class="col text-center">
-                <a class="btn btn-primary" type="button" href="register/register.html">Register now</a>
+                <a class="btn btn-primary" type="button" href="register/register.php">Register now</a>
             </div>
         </div>
     </div>
