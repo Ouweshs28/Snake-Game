@@ -54,5 +54,7 @@ outputNavBar("Score");
 </body>
 
 <?php
+// No parameter is needed for generateFooter
+generateFooter();
 generateCommonJS("score");
 ?>

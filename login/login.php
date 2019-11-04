@@ -63,5 +63,7 @@ outputNavBar("Login");
 </div>
 </body>
 <?php
+// No parameter is needed for generateFooter
+generateFooter();
 generateCommonJS("login");
 ?>

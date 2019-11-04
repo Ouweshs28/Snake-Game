@@ -93,9 +93,12 @@ outputNavBar("Home");
     </div>
 </div>
 </body>
-<footer>
 
-</footer>
 <?php
+
+// Function to generate the footer
+//Takes isHome as an optional parameter as if it is the home directories are different
+generateFooter('true');
+// Generates JS Libraries used
 generateCommonJS("home");
 ?>

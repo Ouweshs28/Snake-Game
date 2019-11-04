@@ -57,5 +57,7 @@ outputNavBar("Register");
 </div>
 
 <?php
+// No parameter is needed for generateFooter
+generateFooter();
 generateCommonJS("register");
 ?>

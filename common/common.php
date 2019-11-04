@@ -110,8 +110,6 @@ function generateHeader($pageTitle,$pagecss)
         }
         if(($pagecss == 'login') OR ($pagecss=='register')){
             echo '<script src="../common/js/select2/select2.min.js"></script>';
-            echo '<!-- Main JS-->';
-            echo '<script src="js/main.js"></script>';
         }
 
         if($pagecss=='login'){
@@ -123,6 +121,8 @@ function generateHeader($pageTitle,$pagecss)
             echo 'scale: 1.1';
             echo '})';
             echo '</script>';
+            echo '<!-- Main JS-->';
+            echo '<script src="js/main.js"></script>';
         }
 
         if($pagecss=='register'){
@@ -130,10 +130,83 @@ function generateHeader($pageTitle,$pagecss)
             echo '<script src="vendor/datepicker/daterangepicker.js"></script>';
             echo '<!-- Main JS-->';
             echo '<script src="js/global.js"></script>';
-
-
         }
-        echo '</html>';
+        echo '<html>';
+    }
+
+    function generateFooter($isHome=null){
+        if ($isHome!=null){
+            $path='';
+        }else{
+            $path='../';
+        }
+        echo '<footer id="footer" class="footer-1">
+<div class="main-footer widgets-dark typo-light">
+<div class="container">
+<div class="row">
+  
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget subscribe no-box">
+<h5 class="widget-title">Ouwesh Seeroo<span></span></h5>
+<p>Middlesex University Mauritius, Studying Computer Science (Systems Engineering) </p>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget no-box">
+<h5 class="widget-title">Quick Links<span></span></h5>
+<ul class="thumbnail-widget">
+<li>
+<div class="thumb-content"><a href="'.$path.'help/help.php">Help</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="'.$path.'score/score.php">Top Players</a></div>	
+</li>
+<li>
+<div class="thumb-content"><a href="'.$path.'login/login.php">Login</a></div>	
+</li>
+<li>
+</ul>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+<div class="widget no-box">
+<h5 class="widget-title">Sign Up<span></span></h5>
+<p>Register here to start playing and keep track of your scores</p>
+<a class="btn btn-nav" href="'.$path.'register/register.php" target="_blank">Register Now</a>
+</div>
+</div>
+
+<div class="col-xs-12 col-sm-6 col-md-3">
+
+<div class="widget no-box">
+<h5 class="widget-title">Contact Us<span></span></h5>
+
+<p><a href="mailto:info@domain.com" title="glorythemes">info@domain.com</a></p>
+<ul class="social-footer2">
+<li class=""><a title="youtube" target="_blank" href="https://www.youtube.com/"><img alt="youtube" width="30" height="30" src="'.$path.'common/img/youtube.png"></a></li>
+<li class=""><a href="https://www.facebook.com/" target="_blank" title="Facebook"><img alt="Facebook" width="30" height="30" src="'.$path.'common/img/facebook.png"></a></li>
+<li class=""><a href="https://twitter.com" target="_blank" title="Twitter"><img alt="Twitter" width="30" height="30" src="'.$path.'common/img/twitter.png"></a></li>
+<li class=""><a title="instagram" target="_blank" href="https://www.instagram.com/"><img alt="instagram" width="30" height="30" src="'.$path.'common/img/instagram.png"></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+  
+<div class="footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<p>Copyright Ouwesh Seeroo ©2019. All rights reserved.</p>
+</div>
+</div>
+</div>
+</div>
+</footer>';
     }
 
 

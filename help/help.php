@@ -40,5 +40,7 @@ outputNavBar("Help");
 </div>
 </body>
 <?php
+// No parameter is needed for generateFooter
+generateFooter();
 generateCommonJS("help");
 ?>
