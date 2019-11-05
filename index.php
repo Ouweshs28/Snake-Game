@@ -15,19 +15,19 @@ outputNavBar("Home");
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img alt="First slide" class="d-block" src="img/gameplay1.PNG">
+            <img alt="Gameplay image 1" class="d-block w-100" src="img/gameplay1.PNG">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Some temporary screenshots of a snake game</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img alt="Second slide" class="d-block" src="img/gameplay2.png">
+            <img alt="Gameplay image 2" class="d-block w-100" src="img/gameplay2.png">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Some temporary screenshots of a snake game</h5>
             </div>
         </div>
         <div class="carousel-item">
-            <img alt="Third slide" class="d-block" src="img/gameplay3.png">
+            <img alt="Gameplay image 3" class="d-block w-100" src="img/gameplay3.png">
             <div class="carousel-caption d-none d-md-block">
                 <h5>Some temporary screenshots of a snake game</h5>
             </div>
@@ -51,7 +51,7 @@ outputNavBar("Home");
 </div>
 <!-- Center Play Button -->
 <div id="playButton" class="col text-center">
-    <a class="btn btn-primary col-md-2" type="button" href="play/play.php">Play</a>
+    <a class="btn btn-primary col-md-2" href="play/play.php">Play</a>
 </div>
 <!-- Cards section  -->
 <div class="card-deck">
@@ -63,7 +63,7 @@ outputNavBar("Home");
         </div>
         <div class="card-footer">
             <div class="col text-center">
-                <a class="btn btn-primary" type="button" href="register/register.php">Register now</a>
+                <a class="btn btn-primary" href="register/register.php">Register now</a>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@ outputNavBar("Home");
         </div>
         <div class="card-footer">
             <div class="col text-center">
-                <a class="btn btn-primary" type="button" href="help/help.php">Find out more</a>
+                <a class="btn btn-primary" href="help/help.php">Find out more</a>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@ outputNavBar("Home");
         </div>
         <div class="card-footer">
             <div class="col text-center">
-                <a class="btn btn-primary" type="button" href="score/score.php">View top players</a>
+                <a class="btn btn-primary" href="score/score.php">View top players</a>
             </div>
         </div>
     </div>

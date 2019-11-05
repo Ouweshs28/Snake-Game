@@ -73,7 +73,7 @@ function generateHeader($pageTitle,$pagecss)
 
 
         for ($x = 0; $x < count($linkNames); $x++) {
-            echo '<a class="btn navbar-btn navButton" type="button"';
+            echo '<a class="btn navbar-btn navButton"';
             if ($linkNames[$x] == $pageName) {
                 echo 'id="activeNavBtn"';
             }
