@@ -6,11 +6,12 @@ include('../common/common.php');
 generateHeader("Snake- Register","register");
 outputNavBar("Register");
 ?>
-
+<section>
 <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
     <div class="wrapper wrapper--w780">
         <div class="card card-3">
             <div class="card-heading"></div>
+            <!--TITLE -->
             <div class="card-body">
                 <h2 class="title">Registration Info</h2>
                 <form method="POST">
@@ -47,6 +48,7 @@ outputNavBar("Register");
                     <div class="input-group">
                         <input class="input--style-3" type="password" placeholder="Confirm Password" name="confirmpassword">
                     </div>
+                    <!--Button-->
                     <div class="p-t-10">
                         <button class="btn-register btn--pill btn--green" type="submit">Submit</button>
                     </div>
@@ -55,9 +57,10 @@ outputNavBar("Register");
         </div>
     </div>
 </div>
-
+</section>
 <?php
 // No parameter is needed for generateFooter
 generateFooter();
+// Outputs Libraries needed for register page
 generateCommonJS("register");
 ?>

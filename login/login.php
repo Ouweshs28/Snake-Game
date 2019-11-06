@@ -3,7 +3,8 @@
 include('../common/common.php');
 
 //Output header and navigation
-generateHeader("Snake- Sign In","login");
+generateHeader("Snake-Sign In", "login");
+//Outputs Navbar for page name with correct folder structure
 outputNavBar("Login");
 ?>
 
@@ -20,7 +21,7 @@ outputNavBar("Login");
 						Member Login
 					</span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
                     <input class="input100" type="text" name="email" placeholder="Email">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
@@ -28,7 +29,7 @@ outputNavBar("Login");
 						</span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                <div class="wrap-input100 validate-input" data-validate="Password is required">
                     <input class="input100" type="password" name="pass" placeholder="Password">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
@@ -61,9 +62,9 @@ outputNavBar("Login");
         </div>
     </div>
 </div>
-</body>
 <?php
 // No parameter is needed for generateFooter
 generateFooter();
+// generates the libraries for the login page
 generateCommonJS("login");
 ?>

@@ -3,7 +3,7 @@
 include('../common/common.php');
 
 //Output header and navigation
-generateHeader("Snake- Leaderboard","score");
+generateHeader("Snake - Leaderboard","score");
 outputNavBar("Score");
 ?>
 
@@ -51,10 +51,9 @@ outputNavBar("Score");
         </tbody>
     </table>
 </div>
-</body>
-
 <?php
 // No parameter is needed for generateFooter
 generateFooter();
+// outputs needed js for score page
 generateCommonJS("score");
 ?>
