@@ -13,15 +13,15 @@ outputNavBar("Score");
 <img src="img/high-score.png" class="rounded float-right scoreImg" alt="High Score">
 
 <!-- LEADERBOARD-->
-<div class="text-center m-5">
+<div class="text-center m-5 mainHeadText">
     <h1>TOP PLAYERS</h1>
 </div>
 
 <!-- Leader Board Table -->
 <div id="scoreBoard">
-    <table class="table table-hover text-center">
+    <table class="table table-hover table-borderless text-center">
         <caption id="captionText">List of user rankings</caption>
-        <thead class="thead-dark">
+        <thead id="tableHead">
         <tr>
             <th scope="col">Rank</th>
             <th scope="col">Name</th>

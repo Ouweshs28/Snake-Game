@@ -56,7 +56,7 @@ outputNavBar("Home");
         </div>
         <!-- Center Play Button -->
         <div id="playButton" class="col text-center">
-            <a class="btn btn-primary col-md-2" href="play/play.php">Play</a>
+            <a class="btn col-md-2" id="playBtn" href="play/play.php">Play</a>
         </div>
     </section>
 
@@ -71,7 +71,7 @@ outputNavBar("Home");
                 </div>
                 <div class="card-footer">
                     <div class="col text-center">
-                        <a class="btn btn-primary" href="register/register.php">Register now</a>
+                        <a class="btn cardBtn" href="register/register.php">Register now</a>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@ outputNavBar("Home");
                 </div>
                 <div class="card-footer">
                     <div class="col text-center">
-                        <a class="btn btn-primary" href="help/help.php">Find out more</a>
+                        <a class="btn cardBtn" href="help/help.php">Find out more</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@ outputNavBar("Home");
                 </div>
                 <div class="card-footer">
                     <div class="col text-center">
-                        <a class="btn btn-primary" href="score/score.php">View top players</a>
+                        <a class="btn cardBtn" href="score/score.php">View top players</a>
                     </div>
                 </div>
             </div>

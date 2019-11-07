@@ -3,18 +3,18 @@
 #breifBox{
     text-align: center;
     margin: 10px 120px 0px 120px;
-    background-color: #00A8E8;
+    background-color: #0DAB76;
 }
 
 /* Box Text*/
 
 .card-title{
     font-weight: bolder;
-    color: #1b1e21;
+    color: #000000;
 }
 
 .card-text:last-child {
-    color: #00171F;
+    color: #000000;
     font-size: larger;
     font-style: italic;
 }
@@ -22,33 +22,44 @@
 
 /* Centering Carousel Item  */
 
+.carousel {
+    padding: 5% 4% 0%;
+}
+
 .card-img-top {
-    height: 35vh;
-    width: 100%;
-    padding-top: 4%;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.carousel-inner{
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
+
 .carousel-inner img {
     margin: auto;
 }
 
 /*   Resizing IMG Carousel   */
-.carousel-item{
-    max-height: 50vh;
+.carousel img {
+    max-height: 450px;
+    margin: 0 auto;
 }
 
 /* Bottom Margin */
 
-#playButton{
-    margin-bottom: 15px;
+#playButton {
+    margin: 15px 0px 50px;
 }
 
+/*Play Button*/
+#playBtn {
+    background-color: #0B5D1E;
+    color: #0DAB76;
+    font-weight: bolder;
+}
+
+#playBtn:hover{
+    background-color: #0b2a13;
+    color: #0DAB76;
+    font-weight: bolder;
+}
 /* Resizing Cards */
 .card-deck {
     margin-right:10%;
@@ -56,11 +67,12 @@
 }
 
 .card {
-    background-color: #73B8CF;
+    background-color: #0DAB76;
 }
 #aboutGame{
     padding: 2%;
-    background-color:#00171F;
+    background-color: #000000!important;
+    border-bottom-style: unset
 }
 
 

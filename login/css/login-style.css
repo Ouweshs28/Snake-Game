@@ -1,5 +1,9 @@
-/*//////////////////////////////////////////////////////////////////
-[ login ]*/
+/*REMOVE FOOTER STYLING*/
+footer {
+    padding-top: unset!important;
+}
+
+/*  login  */
 
 .limiter {
     width: 100%;
@@ -18,19 +22,19 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
-    background: #9053c7;
-    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: #35CE8D;
+    background: -webkit-linear-gradient(-135deg, #35CE8D, #144B34);
+    background: -o-linear-gradient(-135deg, #35CE8D, #144B34);
+    background: -moz-linear-gradient(-135deg, #35CE8D, #144B34);
+    background: linear-gradient(-135deg, #35CE8D, #144B34);
 }
 
 .wrap-login100 {
     width: 960px;
-    background: #fff;
+    background-color: #000000;
+    color: #ffffff;
     border-radius: 10px;
     overflow: hidden;
-
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -41,8 +45,6 @@
     padding: 177px 130px 33px 95px;
 }
 
-/*------------------------------------------------------------------
-[  ]*/
 .login100-pic {
     width: 316px;
 }
@@ -52,8 +54,7 @@
 }
 
 
-/*------------------------------------------------------------------
-[  ]*/
+
 .login100-form {
     width: 290px;
 }
@@ -61,17 +62,14 @@
 .login100-form-title {
     font-family: Poppins-Bold;
     font-size: 24px;
-    color: #333333;
+    color: #0DAB76;
     line-height: 1.2;
     text-align: center;
-
     width: 100%;
     display: block;
     padding-bottom: 54px;
 }
 
-
-/*---------------------------------------------*/
 .wrap-input100 {
     position: relative;
     width: 100%;
@@ -94,8 +92,7 @@
 }
 
 
-/*------------------------------------------------------------------
-[ Focus ]*/
+/* Focus */
 .focus-input100 {
     display: block;
     position: absolute;
@@ -158,8 +155,7 @@
     padding-left: 28px;
 }
 
-/*------------------------------------------------------------------
-[ Button ]*/
+/* Button */
 .container-login100-form-btn {
     width: 100%;
     display: -webkit-box;
@@ -203,8 +199,7 @@
 }
 
 
-/*------------------------------------------------------------------
-[ Alert validate ]*/
+/*  Alert validate  */
 
 .validate-input {
     position: relative;

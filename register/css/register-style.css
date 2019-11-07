@@ -1,3 +1,8 @@
+/*REMOVE FOOTER STYLING*/
+footer {
+    padding-top: unset!important;
+}
+
 /*    PAGE WRAPPER  */
 .page-wrapper {
     min-height: 100vh;
@@ -47,11 +52,11 @@ h6 {
 }
 
 .bg-gra-01 {
-    background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
-    background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
+    background: #35CE8D;
+    background: -webkit-linear-gradient(-135deg, #144B34,#35CE8D);
+    background: -o-linear-gradient(-135deg, #144B34,#35CE8D);
+    background: -moz-linear-gradient(-135deg, #144B34,#35CE8D);
+    background: linear-gradient(-135deg, #144B34,#35CE8D );
 }
 
 /*    SPACING   */
@@ -313,7 +318,7 @@ input {
 /*    TITLE   */
 .title {
     font-size: 24px;
-    color: #fff;
+    color: #0DAB76;
     font-weight: 400;
     margin-bottom: 36px;
 }

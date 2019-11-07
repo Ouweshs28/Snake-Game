@@ -6,8 +6,13 @@
 
 /* Table Styling */
 
-.table{
+.table {
     width: 70%;
+    background-color: #139A43;
+}
+#tableHead{
+    background-color: #053B06;
+    color: #0DAB76;
 }
 
 /* Caption */
@@ -16,9 +21,8 @@
     text-align: right;
     padding-right: 2%;
     padding-top: 2%;
+    color: #0DAB76;
+    font-style: italic;
 }
 
-#scoreBoard{
-
-}
 

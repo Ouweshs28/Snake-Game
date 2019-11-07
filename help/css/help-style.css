@@ -1,3 +1,9 @@
+/*Adding colors in cards*/
+
+.card{
+    background-color: #94C9A9;
+}
+
 /* Resizing the card Images */
 
 .card-img-top {
@@ -28,8 +34,32 @@
 
 #buttonHelpSection{
     margin-right: 10%;
+    border-radius: 25px;
 }
+
+/* Buttons */
 
 .helpButton{
     width:10% ;
+    background-color: #053B06;
+    border-color: #0DAB76;
+    color: #ffffff;
+}
+.helpButton:hover{
+    background-color: #052406;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+#playBtnHelp{
+    background-color: #0DAB76;
+    border-color: #053B06;
+    color: #000000;
+    border-radius: 25px;
+}
+
+#playBtnHelp:hover{
+    background-color: #0d713e;
+    border-color: #053B06;
+    color: #ffffff;
 }
