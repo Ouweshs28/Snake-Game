@@ -6,6 +6,7 @@ include('../common/common.php');
 generateHeader("Snake- Register","register");
 outputNavBar("Register");
 ?>
+<script src="js/register.js"></script>
 <section>
 <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
     <div class="wrapper wrapper--w780">
@@ -14,12 +15,11 @@ outputNavBar("Register");
             <!--TITLE -->
             <div class="card-body">
                 <h2 class="title">Registration Info</h2>
-                <form method="POST">
                     <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Name" name="name">
+                        <input class="input--style-3" type="text" placeholder="Name" name="name" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Username" name="username">
+                        <input class="input--style-3" type="text" placeholder="Username" name="username" >
                     </div>
                     <div class="input-group">
                         <input class="input--style-3 js-datepicker" type="text" placeholder="Birth Date" name="birthday">
@@ -37,22 +37,21 @@ outputNavBar("Register");
                         </div>
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="email" placeholder="Email" name="email">
+                        <input class="input--style-3" type="email" placeholder="Email" name="email" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="text" placeholder="Phone" name="phone">
+                        <input class="input--style-3" type="phone" placeholder="Phone" name="phone" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Password" name="password">
+                        <input class="input--style-3" type="password" placeholder="Password" name="password" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Confirm Password" name="confirmpassword">
+                        <input class="input--style-3" type="password" placeholder="Confirm Password" name="confirmpassword" >
                     </div>
                     <!--Button-->
                     <div class="p-t-10">
-                        <button class="btn-register btn--pill btn--green" type="submit">Submit</button>
+                        <button class="btn-register btn--pill btn--green" onclick="return ValidateUser();">Submit</button>
                     </div>
-                </form>
             </div>
         </div>
     </div>

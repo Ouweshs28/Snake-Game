@@ -17,6 +17,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
         echo '<!-- Common CSS -->';
         echo '<link href="common/css/common.css" rel="stylesheet" type="text/css">';
+        echo '<link href="../common/css/toastr/toastr.css" rel="stylesheet">';
         echo '<!-- ' . $pageTitle . 'CSS -->';
         echo '<link href="css/' . $pagecss . '-style.css" rel="stylesheet" type="text/css">';
         echo ' <!-- Snake Fav ICON -->';
@@ -26,6 +27,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="../common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
         echo '<!-- Common CSS -->';
         echo '<link href="../common/css/common.css" rel="stylesheet" type="text/css">';
+        echo '<link href="../common/css/toastr/toastr.css" rel="stylesheet">';
         echo '<!-- ' . $pageTitle . 'CSS -->';
         echo '<link href="css/' . $pagecss . '-style.css" rel="stylesheet" type="text/css">';
         echo ' <!-- Snake Fav ICON -->';
@@ -110,12 +112,14 @@ function generateCommonJS($pagecss)
         echo '<script src="common/js/jquery/jquery.min.js"></script>';
         echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
         echo '<script src="common/js/bootstrap/bootstrap.min.js"></script>';
+        echo '<script src="common/js/toastr/toastr.js"></script>';
 
     } else {
         echo '<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->';
         echo '<script src="../common/js/jquery/jquery.min.js"></script>';
         echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
         echo '<script src="../common/js/bootstrap/bootstrap.min.js"></script>';
+        echo '<script src="../common/js/toastr/toastr.js"></script>';
 
     }
     if (($pagecss == 'login') OR ($pagecss == 'register')) {
