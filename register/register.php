@@ -40,17 +40,18 @@ outputNavBar("Register");
                         <input class="input--style-3" type="email" placeholder="Email" name="email" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="phone" placeholder="Phone" name="phone" >
+                        <input class="input--style-3" type="text" placeholder="Phone" name="phone" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Password" name="password" >
+                        <input class="input--style-3" type="password" oninput="return PasswordCheck()" placeholder="Password" name="password" >
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Confirm Password" name="confirmpassword" >
+                        <input class="input--style-3" type="password" oninput="return PasswordCheck()" placeholder="Confirm Password" name="confirmpassword" >
                     </div>
+                <div id="wrongPass"></div>
                     <!--Button-->
                     <div class="p-t-10">
-                        <button class="btn-register btn--pill btn--green" onclick="return ValidateUser();">Submit</button>
+                        <button class="btn-register btn--pill btn--green" onclick="return RegisterUser();">Submit</button>
                     </div>
             </div>
         </div>
