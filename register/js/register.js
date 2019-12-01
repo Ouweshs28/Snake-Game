@@ -76,6 +76,10 @@ function PasswordCheck() {
 
 }
 
+function checkExisting(){
+
+}
+
 
 function CreateUser() {
     let users = {};
