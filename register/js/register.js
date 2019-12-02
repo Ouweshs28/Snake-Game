@@ -24,7 +24,7 @@ function ValidateInput() {
     let usernameRegex = /^[a-zA-Z0-9.\-_$@*!]{3,30}$/;
     username = document.getElementsByName("username")[0].value;
     if ((username === "") || ((usernameRegex.test(username)) === false)) {
-        toastr.error('Please enter a valid username' +
+        toastr.error('Please enter a valid username ' +
             'A minimum of 3 characters and _$@*! ARE NOT ALLOWED ');
         return;
     }
@@ -71,6 +71,24 @@ function PasswordCheck() {
     confrimpassword = document.getElementsByName("confirmpassword")[0].value;
     password = document.getElementsByName("password")[0].value;
 
+    let passwordRegex = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+
+    if (!password.match(passwordRegex)) {
+        document.getElementById('weakPass').style.display = 'block';
+        document.getElementById('weakPass').innerHTML = '<div class="alert alert-warning" role="alert">\n' +
+            '  <h4 class="alert-heading">Weak password</h4>' +
+            '  <p>Please include the following:</p>' +
+            '<ul>' +
+            '<li>At least 8 characters</li>' +
+            '<li> Include a lowercase and uppercase</li>' +
+            '<li>At least a number or a special character</li>' +
+            '</ul>' +
+            '</div>'
+    } else {
+        document.getElementById('weakPass').style.display = 'none';
+
+    }
+
     if (password != confrimpassword) {
         document.getElementById('wrongPass').style.display = 'block';
         document.getElementById('wrongPass').innerHTML = '<div class="alert alert-danger" role="alert">' +
@@ -84,7 +102,7 @@ function PasswordCheck() {
 }
 
 function CheckExisting() {
-    let exist=true;
+    let exist = true;
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         let userkey = localStorage.getItem(key);
