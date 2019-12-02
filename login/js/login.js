@@ -9,6 +9,11 @@ function UserLogin() {
 
 }
 
+function RedirectPlay() {
+    window.location.href = '/play/play.php';
+    toastr.success("Redirecting to game page");
+}
+
 function CheckUser() {
     email = document.getElementById("loginEmail").value;
     password = document.getElementById("loginPass").value;
@@ -20,14 +25,14 @@ function CheckUser() {
         let users = JSON.parse(localStorage[email]);//Convert to object
         if (password === users.password) {//Successful login
             toastr.success(users.username + " successfully logged in");
-            localStorage.username = users.name;//Store name
+            localStorage.username = users.username;//Store name
+            setTimeout('RedirectPlay()', 3000);
         } else {
             toastr.error("Wrong user password, please try again!")
         }
     }
-
-
 }
+
 
 function ValidateLogin() {
     let valid = false;

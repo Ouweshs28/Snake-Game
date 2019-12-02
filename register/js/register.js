@@ -13,6 +13,11 @@ function RegisterUser() {
     }
 }
 
+function RedirectLogin() {
+    window.location.href = '/login/login.php';
+    toastr.success("Redirecting to login page");
+}
+
 function ValidateInput() {
     let valid = false;
     let alphaRegex = /^[a-zA-Z ]+$/;
@@ -105,19 +110,21 @@ function CheckExisting() {
     let exist = true;
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
-        let userkey = localStorage.getItem(key);
-        username = document.getElementsByName("username")[0].value;
-        let users = JSON.parse(userkey);//Convert to object
-        if (username === users.username) {
-            toastr.error(username + " already exists please sign in or choose a different one");
-            return;
-        }
-        email = document.getElementsByName("email")[0].value;
-        if (email === users.email) {
-            toastr.error(email + " is already taken up, please sign in or choose a different one");
-            return;
-        }
+        if (!key==="username") {
+            let userkey = localStorage.getItem(key);
+            username = document.getElementsByName("username")[0].value;
+            let users = JSON.parse(userkey);//Convert to object
+            if (username === users.username) {
+                toastr.error(username + " already exists please sign in or choose a different one");
+                return;
+            }
+            email = document.getElementsByName("email")[0].value;
+            if (email === users.email) {
+                toastr.error(email + " is already taken up, please sign in or choose a different one");
+                return;
+            }
 
+        }
     }
     exist = false;
     return exist;
@@ -138,6 +145,7 @@ function CreateUser() {
     //Store user
     localStorage[users.email] = JSON.stringify(users);
     //Inform user of result
-    toastr.success('User registered successfully please login')
+    toastr.success('User registered successfully');
+    setTimeout('RedirectLogin()', 2000);
 
 }

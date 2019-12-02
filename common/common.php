@@ -52,7 +52,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">';
     }
     echo '</head>';
-    echo '<body>';
+    echo '<body onload="CheckSession()">';
 }
 
 /* Outputs NavigationBar with corresponding link */
@@ -113,6 +113,7 @@ function generateCommonJS($pagecss)
         echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
         echo '<script src="common/js/bootstrap/bootstrap.min.js"></script>';
         echo '<script src="common/js/toastr/toastr.js"></script>';
+        echo '<script src="common/js/common.js"></script>';
 
     } else {
         echo '<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->';
@@ -120,6 +121,7 @@ function generateCommonJS($pagecss)
         echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
         echo '<script src="../common/js/bootstrap/bootstrap.min.js"></script>';
         echo '<script src="../common/js/toastr/toastr.js"></script>';
+        echo '<script src="../common/js/common.js"></script>';
 
     }
     if (($pagecss == 'login') OR ($pagecss == 'register')) {
