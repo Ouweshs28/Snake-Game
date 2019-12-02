@@ -32,7 +32,7 @@ outputNavBar("Login");
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" onclick="return ValidateLogin();">
+                    <button class="login100-form-btn" onclick="return UserLogin();">
                         Login
                     </button>
                 </div>

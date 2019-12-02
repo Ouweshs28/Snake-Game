@@ -1,7 +1,15 @@
+var email = "";
+var username = "";
+var password = "";
+var confrimpassword = "";
+
 function RegisterUser() {
     let valid = ValidateInput();
-    if (valid == true) {
-        CreateUser();
+    if (valid === true) {
+        let exist = CheckExisting();
+        if (exist === false) {
+            CreateUser();
+        }
     }
 }
 
@@ -14,7 +22,7 @@ function ValidateInput() {
         return;
     }
     let usernameRegex = /^[a-zA-Z0-9.\-_$@*!]{3,30}$/;
-    let username = document.getElementsByName("username")[0].value;
+    username = document.getElementsByName("username")[0].value;
     if ((username === "") || ((usernameRegex.test(username)) === false)) {
         toastr.error('Please enter a valid username' +
             'A minimum of 3 characters and _$@*! ARE NOT ALLOWED ');
@@ -29,7 +37,7 @@ function ValidateInput() {
         toastr.error('Please select a valid gender');
         return;
     }
-    let email = document.getElementsByName("email")[0].value;
+    email = document.getElementsByName("email")[0].value;
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if ((email === "") || ((emailRegex.test(email)) === false)) {
         toastr.error('Please enter a valid email');
@@ -41,12 +49,12 @@ function ValidateInput() {
         toastr.error('Please enter a valid phone number');
         return;
     }
-    let password = document.getElementsByName("password")[0].value;
+    password = document.getElementsByName("password")[0].value;
     if (password === "") {
         toastr.error('Please enter a valid password');
         return;
     }
-    let confrimpassword = document.getElementsByName("confirmpassword")[0].value;
+    confrimpassword = document.getElementsByName("confirmpassword")[0].value;
     if (confrimpassword === "") {
         toastr.error('Please enter a valid confirmed password');
         return;
@@ -60,24 +68,41 @@ function ValidateInput() {
 }
 
 function PasswordCheck() {
-    let confrimpassword = document.getElementsByName("confirmpassword")[0].value;
-    let password = document.getElementsByName("password")[0].value;
+    confrimpassword = document.getElementsByName("confirmpassword")[0].value;
+    password = document.getElementsByName("password")[0].value;
 
-    if (password!=confrimpassword) {
-        document.getElementById('wrongPass').style.display='block';
+    if (password != confrimpassword) {
+        document.getElementById('wrongPass').style.display = 'block';
         document.getElementById('wrongPass').innerHTML = '<div class="alert alert-danger" role="alert">' +
             'Confirmed Password & Password do not match' +
             '</div>'
-    }
-    else {
-        document.getElementById('wrongPass').style.display='none';
+    } else {
+        document.getElementById('wrongPass').style.display = 'none';
 
     }
 
 }
 
-function checkExisting(){
+function CheckExisting() {
+    let exist=true;
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let userkey = localStorage.getItem(key);
+        username = document.getElementsByName("username")[0].value;
+        let users = JSON.parse(userkey);//Convert to object
+        if (username === users.username) {
+            toastr.error(username + " already exists please sign in or choose a different one");
+            return;
+        }
+        email = document.getElementsByName("email")[0].value;
+        if (email === users.email) {
+            toastr.error(email + " is already taken up, please sign in or choose a different one");
+            return;
+        }
 
+    }
+    exist = false;
+    return exist;
 }
 
 
