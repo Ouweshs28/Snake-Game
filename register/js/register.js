@@ -4,10 +4,8 @@ var password = "";
 var confrimpassword = "";
 
 function RegisterUser() {
-    let valid = ValidateInput();
-    if (valid === true) {
-        let exist = CheckExisting();
-        if (exist === false) {
+    if (ValidateInput()) {
+        if (CheckExisting()===false) {
             CreateUser();
         }
     }
@@ -110,7 +108,7 @@ function CheckExisting() {
     let exist = true;
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
-        if (!key==="username") {
+        if (key !=="username") {
             let userkey = localStorage.getItem(key);
             username = document.getElementsByName("username")[0].value;
             let users = JSON.parse(userkey);//Convert to object
@@ -140,7 +138,7 @@ function CreateUser() {
     users.email = document.getElementsByName("email")[0].value;
     users.phone = document.getElementsByName("phone")[0].value;
     users.password = document.getElementsByName("password")[0].value;
-    users.score = 0;
+    users.score = 100;
 
     //Store user
     localStorage[users.email] = JSON.stringify(users);
