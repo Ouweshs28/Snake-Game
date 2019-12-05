@@ -44,6 +44,11 @@ function GenerateTable() {
         '        </thead>'+
         '        <tbody>';
     document.getElementById('scoreBoard').innerHTML=table;
+    if(localStorage.length===0){
+        document.getElementById("scoreBoard").style.paddingBottom="120px";
+        toastr.error("No User Data Available");
+        return
+    }
     let rank=1;
     userArray.forEach(function(item){
         rank===1 ? $('tbody').append('<tr class="table-success"><th scope="row">'+rank+'</th>'+'<td>'+item.name+'</td><td>'+item.username+'</td><td>'+item.score+'</td></tr>'):
