@@ -138,7 +138,7 @@ function CreateUser() {
     users.email = document.getElementsByName("email")[0].value;
     users.phone = document.getElementsByName("phone")[0].value;
     users.password = document.getElementsByName("password")[0].value;
-    users.score = 100;
+    users.score = 0;
 
     //Store user
     localStorage[users.email] = JSON.stringify(users);
