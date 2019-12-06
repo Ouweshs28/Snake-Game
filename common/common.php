@@ -52,7 +52,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">';
     }
     echo '</head>';
-    echo '<body onload="CheckSession()">';
+    echo '<body onload="return CheckSession()">';
 }
 
 /* Outputs NavigationBar with corresponding link */

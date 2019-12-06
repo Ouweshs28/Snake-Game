@@ -1,5 +1,13 @@
-
 (function(){
+    let signedIn=false
+    if (localStorage.username != undefined) {
+        signedIn=true;
+        document.getElementsByClassName("btn navbar-btn navButton")[2].outerHTML = '<a class="btn navbar-btn navButton" onclick="Logout()">Logout</a>';
+    }
+    if (window.location.href.includes('play') && signedIn==false){
+        setTimeout(toastr.error("You need to login to play"), 3000)
+
+    }
 
     //Disable Keys on the page
     window.addEventListener("keydown", function(e) {
