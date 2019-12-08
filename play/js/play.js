@@ -61,9 +61,17 @@
     let wall_setting;
 
     /////////////////////////////////////////////////////////////
-
+    //Random Color Generator
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
     let activeDot = function (x, y) {
-        ctx.fillStyle = "#FFFFFF";
+        ctx.fillStyle = getRandomColor();
         ctx.fillRect(x * 10, y * 10, 10, 10);
     };
 

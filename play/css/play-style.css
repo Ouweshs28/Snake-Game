@@ -27,6 +27,9 @@ canvas:focus{
 }
 
 /* Top Styles */
+h5{
+    color: #FFFFFF;
+}
 h1{
     display: inline-block;
     width: 100px;
