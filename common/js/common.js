@@ -1,6 +1,6 @@
 function CheckSession() {
     let signedIn=false
-    if (localStorage.username != undefined) {
+    if (localStorage.email != undefined) {
         signedIn=true;
         document.getElementsByClassName("btn navbar-btn navButton")[2].outerHTML = '<a class="btn navbar-btn navButton" onclick="Logout()">Logout</a>';
     }

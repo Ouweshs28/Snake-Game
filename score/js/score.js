@@ -4,7 +4,7 @@ GenerateTable();
 function PopulateUsers() {
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
-        if (key !=="username") {
+        if (key !=="email") {
             let userkey = localStorage.getItem(key);
             userArray[i] = JSON.parse(userkey);//Convert to object
 

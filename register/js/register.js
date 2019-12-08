@@ -108,7 +108,7 @@ function CheckExisting() {
     let exist = true;
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
-        if (key !=="username") {
+        if (key !=="email") {
             let userkey = localStorage.getItem(key);
             username = document.getElementsByName("username")[0].value;
             let users = JSON.parse(userkey);//Convert to object

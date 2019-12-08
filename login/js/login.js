@@ -25,7 +25,7 @@ function CheckUser() {
         let users = JSON.parse(localStorage[email]);//Convert to object
         if (password === users.password) {//Successful login
             toastr.success(users.username + " successfully logged in");
-            localStorage.username = users.username;//Store name
+            localStorage.email = users.email;//Store name
             setTimeout('RedirectPlay()', 3000);
         } else {
             toastr.error("Wrong user password, please try again!")

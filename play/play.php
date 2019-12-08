@@ -9,23 +9,27 @@ outputNavBar("play");
 <script src="js/play.js"></script>
     <header class="wrap">
         <h1>Snake</h1>
+        <p class="score" style="display: none" >Timer: <span id="timer">starting..</span></p>
         <p class="score">Score: <span id="score_value">0</span></p>
     </header>
-    <canvas class="wrap" id="snake" width="320" height="320" tabindex="1"></canvas>
+    <canvas class="wrap" id="snake" width="800" height="400" tabindex="1"></canvas>
 
     <!-- Game Over Screen -->
     <div id="gameover">
         <h2>Game Over</h2>
-        <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a</p>
-        <a id="newgame_gameover">new game</a>
-        <a id="setting_gameover">settings</a>
+        <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a new arcade mode</p>
+        <p>press <span style="background-color: #FFFFFF; color: #000000">  t  </span> to begin a new arcade mode</p>
+        <a id="newgame_gameover">Arcade Mode</a>
+        <a id="newgame_time_gameover">Time Attack</a>
+        <a id="setting_gameover">Settings</a>
     </div>
 
     <!-- Setting screen -->
     <div id="setting">
         <h2>Settings</h2>
 
-        <a id="newgame_setting">new game</a>
+        <a id="newgame_setting">Arcade Mode</a>
+        <a id="newgame_time_setting">Time Attack</a>
 
         <p>Speed:
             <input id="speed1" type="radio" name="speed" value="120" checked/>
@@ -49,8 +53,9 @@ outputNavBar("play");
     <div id="menu">
         <h2>Snake</h2>
 
-        <a id="newgame_menu">new game</a>
-        <a id="setting_menu">settings</a>
+        <a id="newgame_menu">Arcade Mode</a>
+        <a id="newgame_time_menu">Time Attack</a>
+        <a id="setting_menu">Settings</a>
     </div>
 <?php
 // Function to generate the footer
