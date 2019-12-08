@@ -9,7 +9,6 @@ outputNavBar("play");
 <script src="js/play.js"></script>
     <header class="wrap">
         <h1>Snake</h1>
-        <h5>Press P to pause/resume the game</h5>
         <p class="score" style="display: none" >Timer: <span id="timer">starting..</span></p>
         <p class="score">Score: <span id="score_value">0</span></p>
     </header>
