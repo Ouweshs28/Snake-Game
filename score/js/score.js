@@ -14,6 +14,7 @@ function PopulateUsers() {
 }
 
 function SortScores() {
+    console.log(userArray);
     userArray=PopulateUsers();
     let needsort=true;
     for (let i=1;i<userArray.length && needsort;i++){

@@ -14,7 +14,7 @@ function CheckSession() {
 }
 
 function Logout() {
-    localStorage.removeItem('username');
+    localStorage.removeItem('email');
     toastr.success("Successfully logged out");
     setTimeout('Redirect()', 2000);
 
@@ -24,5 +24,8 @@ function Redirect() {
     if(!window.location.href.includes('index')){
         toastr.success("Redirecting to home page");
         window.location.href = '../index.php';
+    }
+    if(window.location.href.includes('index')){
+        location.reload();
     }
 }

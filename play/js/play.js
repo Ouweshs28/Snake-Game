@@ -62,6 +62,13 @@
     let paused;
     let pause;
 
+    //Sounds
+
+    let dead;
+    let eat;
+    let bump;
+
+
     /////////////////////////////////////////////////////////////
 
     //Random Color Generator
@@ -172,6 +179,7 @@
             // On
             if (snake[0].x < 0 || snake[0].x == canvas.width / 10 || snake[0].y < 0 || snake[0].y == canvas.height / 10) {
                 showScreen(3);
+                bump.play();
                 return;
             }
         } else {
@@ -198,6 +206,7 @@
         for (let i = 1; i < snake.length; i++) {
             if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
                 storeScore(score);
+                dead.play();
                 showScreen(3);
                 return;
             }
@@ -214,6 +223,7 @@
             addFood();
             activeDot(food.x, food.y);
             foodeaten=true
+            eat.play();
         }
 
 
@@ -258,12 +268,13 @@
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
             display.textContent = minutes + ":" + seconds;
-            if (--timer == 0 && timeattack == 1) {
+            if (--timer < 0 && timeattack == 1) {
                 storeScore(score);
                 showScreen(3);
                 timeattack = 0;
                 clearInterval(start);
-                display.textContent="20";
+                display.textContent="starting..";
+                dead.play();
             }
         }, 1000);
 
@@ -304,17 +315,19 @@
     /////////////////////////////////////////////////////////////
 
     let newGame = function (t) {
+        eat=new Audio('sound/coin.mp3');
+        dead=new Audio('sound/dead.wav');
+        bump=new Audio('sound/bump.mp3');
         timeattack = t;
         if (timeattack == 1) {
             console.log(pause.style.display);
             timerelm.style.display = "block";
             pause.style.display="none";
-            console.log(pause.style.display);
+
             drawElapsedTime();
         } else if (timeattack == 0) {
             timerelm.style.display = "none";
             pause.style.display="block";
-            console.log(pause.style.display);
         }
 
         showScreen(0);
