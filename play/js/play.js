@@ -61,6 +61,7 @@
     let wall_setting;
     let paused;
     let pause;
+    let checkdead;
 
     //Sounds
 
@@ -76,6 +77,15 @@
         let letters = '0123456789ABCDEF';
         let color = '#';
         for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    function getRandomRed() {
+        let letters = '0123456789ABCDEF';
+        let color = '#FF';
+        for (let i = 0; i < 4; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
@@ -207,6 +217,7 @@
             if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
                 storeScore(score);
                 dead.play();
+                checkdead=true;
                 showScreen(3);
                 return;
             }
@@ -222,7 +233,7 @@
             altScore(score);
             addFood();
             activeDot(food.x, food.y);
-            foodeaten=true
+            foodeaten=true;
             eat.play();
         }
 
@@ -260,15 +271,14 @@
 
             if (foodeaten){
                 foodeaten=false;
-                timer=seconds=seconds+5;
+                timer=seconds=seconds+10;
             }
-
 
             minutes = minutes < 10 ? "0" + minutes : minutes;
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
             display.textContent = minutes + ":" + seconds;
-            if (--timer < 0 && timeattack == 1) {
+            if (--timer < 0 ||checkdead) {
                 storeScore(score);
                 showScreen(3);
                 timeattack = 0;
@@ -283,7 +293,7 @@
     //Initial timer function
 
     function drawElapsedTime() {
-        countdown = 20;
+        countdown = 30;
         let display = document.querySelector('#timer');
         if (timeattack != 0) {
             startTimer(countdown, display)
@@ -318,12 +328,14 @@
         eat=new Audio('sound/coin.mp3');
         dead=new Audio('sound/dead.wav');
         bump=new Audio('sound/bump.mp3');
+        checkdead=false;
         timeattack = t;
+
+
         if (timeattack == 1) {
             console.log(pause.style.display);
             timerelm.style.display = "block";
             pause.style.display="none";
-
             drawElapsedTime();
         } else if (timeattack == 0) {
             timerelm.style.display = "none";
@@ -370,7 +382,7 @@
             screen_snake.style.borderColor = "#606060";
         }
         if (wall == 1) {
-            screen_snake.style.borderColor = "#FFFFFF";
+            screen_snake.style.borderColor = getRandomRed();
         }
     };
 
