@@ -2,11 +2,13 @@ let userArray = new Array();
 userArray=SortScores();
 GenerateTable();
 function PopulateUsers() {
+    let arrayindex=0;
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
         if (key !=="email") {
             let userkey = localStorage.getItem(key);
-            userArray[i] = JSON.parse(userkey);//Convert to object
+            userArray[arrayindex] = JSON.parse(userkey);//Convert to object
+            arrayindex++;
 
         }
     }
@@ -14,7 +16,6 @@ function PopulateUsers() {
 }
 
 function SortScores() {
-    console.log(userArray);
     userArray=PopulateUsers();
     let needsort=true;
     for (let i=1;i<userArray.length && needsort;i++){

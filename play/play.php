@@ -19,7 +19,7 @@ outputNavBar("play");
     <div id="gameover">
         <h2>Game Over</h2>
         <p>press <span style="background-color: #FFFFFF; color: #000000">space</span> to begin a new arcade mode</p>
-        <p>press <span style="background-color: #FFFFFF; color: #000000">  t  </span> to begin a new arcade mode</p>
+        <p>press <span style="background-color: #FFFFFF; color: #000000">  t  </span> to begin a new time attack</p>
         <a id="newgame_gameover">Arcade Mode</a>
         <a id="newgame_time_gameover">Time Attack</a>
         <a id="setting_gameover">Settings</a>
