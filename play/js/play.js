@@ -59,8 +59,11 @@
     let ele_score;
     let speed_setting;
     let wall_setting;
+    let paused;
+    let pause;
 
     /////////////////////////////////////////////////////////////
+
     //Random Color Generator
     function getRandomColor() {
         let letters = '0123456789ABCDEF';
@@ -98,6 +101,9 @@
                 }
             }
         }
+        if (key==80){
+            pauseGame();
+        }
 
     };
 
@@ -129,6 +135,10 @@
     /////////////////////////////////////////////////////////////
 
     let mainLoop = function () {
+        if(paused){
+            return;
+        }
+
 
         let _x = snake[0].x;
         let _y = snake[0].y;
@@ -237,7 +247,6 @@
         let start=setInterval(function () {
             minutes = parseInt(timer / 60, 10);
             seconds = parseInt(timer % 60, 10);
-            console.log(timer);
 
             if (foodeaten){
                 foodeaten=false;
@@ -269,6 +278,13 @@
             startTimer(countdown, display)
         }
     }
+    // Pause Game
+
+    function pauseGame() {
+        paused = !paused; // toggle the gamePaused value (false <-> true)
+        if (!paused)
+            mainLoop(); // restart loop
+    }
 
     //Store scores
     function storeScore(score) {
@@ -290,10 +306,15 @@
     let newGame = function (t) {
         timeattack = t;
         if (timeattack == 1) {
+            console.log(pause.style.display);
             timerelm.style.display = "block";
+            pause.style.display="none";
+            console.log(pause.style.display);
             drawElapsedTime();
         } else if (timeattack == 0) {
             timerelm.style.display = "none";
+            pause.style.display="block";
+            console.log(pause.style.display);
         }
 
         showScreen(0);
@@ -370,6 +391,7 @@
                 screen_setting.style.display = "block";
                 screen_gameover.style.display = "none";
                 timerelm.style.display = "none";
+                pause.style.display="none";
                 break;
 
             case 3:
@@ -378,6 +400,7 @@
                 screen_setting.style.display = "none";
                 screen_gameover.style.display = "block";
                 timerelm.style.display = "none";
+                pause.style.display="none";
                 break;
         }
     };
@@ -410,6 +433,7 @@
         speed_setting = document.getElementsByName("speed");
         wall_setting = document.getElementsByName("wall");
         timerelm = document.getElementsByClassName("score")[0];
+        pause=document.getElementById("pause");
 
 
         // --------------------
