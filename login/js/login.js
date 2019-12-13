@@ -1,6 +1,11 @@
 let email = "";
 let password = "";
 
+/*
+    Function to login
+    Validates Login
+    If its valid then if check the data with local storage
+ */
 function UserLogin() {
     let valid = ValidateLogin();
     if (valid === true) {
@@ -9,11 +14,20 @@ function UserLogin() {
 
 }
 
+/*
+     Function to redirect to play page after login
+ */
+
 function RedirectPlay() {
     window.location.href = '/play/play.php';
     toastr.success("Redirecting to game page");
 }
 
+/*
+    Checks for the following:
+    If user already created an account
+    if not prompt the user
+ */
 function CheckUser() {
     email = document.getElementById("loginEmail").value;
     password = document.getElementById("loginPass").value;
@@ -33,6 +47,10 @@ function CheckUser() {
     }
 }
 
+
+/*
+    Regex Validation
+ */
 
 function ValidateLogin() {
     let valid = false;

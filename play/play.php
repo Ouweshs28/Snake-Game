@@ -6,12 +6,12 @@ include('../common/common.php');
 generateHeader("Snake- Play", "play");
 outputNavBar("play");
 ?>
-<script src="js/play.js"></script>
     <header class="wrap">
         <h1>Snake</h1>
         <h5 id="pause">Press P to pause/resume the game</h5>
         <p class="score" style="display: none" >Timer: <span id="timer">starting..</span></p>
         <p class="score">Score: <span id="score_value">0</span></p>
+        <p class="score" style="...">Level: <span id="level">1</span></p>
     </header>
     <canvas class="wrap" id="snake" width="800" height="400" tabindex="1"></canvas>
 

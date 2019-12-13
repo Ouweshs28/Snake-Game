@@ -147,6 +147,9 @@ function generateCommonJS($pagecss)
         echo '<!-- Main JS-->';
         echo '<script src="js/global.js"></script>';
     }
+    if ($pagecss == 'play'){
+        echo '<script src="js/play.js"></script>';
+    }
     echo '</html>';
 }
 

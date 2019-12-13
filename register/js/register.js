@@ -1,20 +1,38 @@
-var email = "";
-var username = "";
-var password = "";
-var confrimpassword = "";
+let email = "";
+let username = "";
+let password = "";
+let confrimpassword = "";
+
+/*
+        Function to register user
+        1. Validates Input
+        2. Checks if there is an existing user with that email or username
+        3. Then creates the user
+ */
 
 function RegisterUser() {
     if (ValidateInput()) {
-        if (CheckExisting()===false) {
+        if (CheckExisting() === false) {
             CreateUser();
         }
     }
 }
 
+
+/*
+    Function to redirect to login page
+ */
+
 function RedirectLogin() {
     window.location.href = '/login/login.php';
     toastr.success("Redirecting to login page");
 }
+
+/*
+        Validating all fields
+        Checking for empty fields and using regular expression
+        Prompting errors to the user
+ */
 
 function ValidateInput() {
     let valid = false;
@@ -70,6 +88,13 @@ function ValidateInput() {
 
 }
 
+/*
+    Function for passwords:
+    1. Validates strong passwords
+    2. Checks if both passwords match
+
+ */
+
 function PasswordCheck() {
     confrimpassword = document.getElementsByName("confirmpassword")[0].value;
     password = document.getElementsByName("password")[0].value;
@@ -103,12 +128,14 @@ function PasswordCheck() {
     }
 
 }
-
+/*
+    Checks if the user registered existing email or user
+ */
 function CheckExisting() {
     let exist = true;
     for (let i = 0; i < localStorage.length; i++) {
         let key = localStorage.key(i);
-        if (key !=="email") {
+        if (key !== "email") {
             let userkey = localStorage.getItem(key);
             username = document.getElementsByName("username")[0].value;
             let users = JSON.parse(userkey);//Convert to object
@@ -127,6 +154,10 @@ function CheckExisting() {
     exist = false;
     return exist;
 }
+
+/*
+        Create User function and stores it in an object in local storage
+ */
 
 
 function CreateUser() {

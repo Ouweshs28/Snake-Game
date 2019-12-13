@@ -1,11 +1,18 @@
 (function () {
-    let signedIn = false
+
+    /*
+    Checks if user is signed in
+     */
+    /*
+     */
+    let signedIn = false;
     if (localStorage.email != undefined) {
         signedIn = true;
         document.getElementsByClassName("btn navbar-btn navButton")[2].outerHTML = '<a class="btn navbar-btn navButton" onclick="Logout()">Logout</a>';
     }
-    if (window.location.href.includes('play') && signedIn == false) {
-        setTimeout(toastr.error("You need to login to play"), 3000)
+    if (window.location.href.includes('play') && !signedIn) {
+        toastr.error("You need to login to play");
+        window.location.href = '/login/login.php';
 
     }
 
@@ -20,6 +27,7 @@
 
     // Canvas & Context
     let canvas;
+
     let ctx;
 
     // Snake
@@ -62,6 +70,9 @@
     let paused;
     let pause;
     let checkdead;
+    let level;
+    let levelelm;
+    let leveldisplay;
 
     //Sounds
 
@@ -97,7 +108,10 @@
 
 
     /////////////////////////////////////////////////////////////
-
+/*
+        Changing direction of Snake according to keyboard press
+        Passing keyboard key event as parameter
+ */
     let changeDir = function (key) {
 
         if (key == 38 || key == 87 && snake_dir != 2) {
@@ -125,7 +139,9 @@
     };
 
     /////////////////////////////////////////////////////////////
-
+        /*
+        Generating food base on canvas size
+         */
     let addFood = function () {
         food.x = Math.floor(Math.random() * ((canvas.width / 10) - 1));
         food.y = Math.floor(Math.random() * ((canvas.height / 10) - 1));
@@ -137,6 +153,7 @@
         }
     };
 
+    // Checks blocks each time
     /////////////////////////////////////////////////////////////
 
     let checkBlock = function (x, y, _x, _y) {
@@ -144,16 +161,59 @@
     };
 
     /////////////////////////////////////////////////////////////
-
+    // Updates scores accordingly
     let altScore = function (score_val) {
         ele_score.innerHTML = String(score_val);
     };
 
     /////////////////////////////////////////////////////////////
-
+    // Main Loop of the game
+    // Handles with the snake moving
     let mainLoop = function () {
+        console.log(snake_speed)
+        levelelm.innerHTML = leveldisplay;
         if(paused){
             return;
+        }
+        if(score>5 && leveldisplay==1){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=2;
+        }
+        if(score>10 && leveldisplay==2){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=3;
+        }
+        if(score>15 && leveldisplay==3){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=4;
+        }
+        if(score>20 && leveldisplay==4){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=5;
+        }
+        if(score>25 && leveldisplay==5){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=6;
+        }
+        if(score>30 && leveldisplay==6){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=7;
+        }
+        if(score>35 && leveldisplay==7){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=8;
+        }
+        if(score>40 && leveldisplay==8){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=9;
+        }
+        if(score>45 && leveldisplay==9){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=10;
+        }
+        if(score>50 && leveldisplay==10){
+            setSnakeSpeed(snake_speed-20);
+            leveldisplay=11;
         }
 
 
@@ -194,6 +254,7 @@
             }
         } else {
             // Off
+            // If OFF position is the last from the canvas it starts from the first position based on x, y coordinates
             for (let i = 0, x = snake.length; i < x; i++) {
                 if (snake[i].x < 0) {
                     snake[i].x = snake[i].x + (canvas.width / 10);
@@ -254,13 +315,14 @@
 
         activeDot(food.x, food.y);
 
-        // Debug
-        //document.getElementById("debug").innerHTML = snake_dir + " " + snake_next_dir + " " + snake[0].x + " " + snake[0].y;
-
         setTimeout(mainLoop, snake_speed);
     };
     ////////////////////////////////////////////////////////////
-    /* SCORE */
+    /* Timer function
+        Duration must be in seconds
+        For i.e = 2 mins = 60 *2
+        Display is the element of the html
+     */
 
     function startTimer(duration, display) {
         let timer = duration, minutes, seconds;
@@ -313,6 +375,7 @@
         let userslocal = localStorage.getItem(userkey);
         let users=JSON.parse(userslocal);
         if(score>users.score) {
+            toastr.success("Congratulations you have a new high score");
             users.score = score;
             localStorage.removeItem(userkey);
             localStorage[users.email] = JSON.stringify(users);
@@ -323,17 +386,18 @@
 
 
     /////////////////////////////////////////////////////////////
-
+   // Starts new game
+    // Parameter takes time attack on=1 off=0
     let newGame = function (t) {
         eat=new Audio('sound/coin.mp3');
         dead=new Audio('sound/dead.wav');
         bump=new Audio('sound/bump.mp3');
         checkdead=false;
         timeattack = t;
+        leveldisplay=1;
 
 
         if (timeattack == 1) {
-            console.log(pause.style.display);
             timerelm.style.display = "block";
             pause.style.display="none";
             drawElapsedTime();
@@ -341,6 +405,7 @@
             timerelm.style.display = "none";
             pause.style.display="block";
         }
+
 
         showScreen(0);
         screen_snake.focus();
@@ -361,6 +426,7 @@
             evt = evt || window.event;
             changeDir(evt.keyCode);
         };
+
         mainLoop();
 
     };
@@ -387,7 +453,7 @@
     };
 
     /////////////////////////////////////////////////////////////
-
+    // Updating HTML elements accordingly
     // 0 for the game
     // 1 for the main menu
     // 2 for the settings screen
@@ -400,6 +466,7 @@
                 screen_menu.style.display = "none";
                 screen_setting.style.display = "none";
                 screen_gameover.style.display = "none";
+                level.style.display="block";
                 break;
 
             case 1:
@@ -408,6 +475,7 @@
                 screen_setting.style.display = "none";
                 screen_gameover.style.display = "none";
                 timerelm.style.display = "none";
+                level.style.display="none";
                 break;
 
             case 2:
@@ -417,6 +485,7 @@
                 screen_gameover.style.display = "none";
                 timerelm.style.display = "none";
                 pause.style.display="none";
+                level.style.display="none";
                 break;
 
             case 3:
@@ -426,6 +495,7 @@
                 screen_gameover.style.display = "block";
                 timerelm.style.display = "none";
                 pause.style.display="none";
+                level.style.display="none";
                 break;
         }
     };
@@ -455,9 +525,11 @@
 
         // etc
         ele_score = document.getElementById("score_value");
+        levelelm=document.getElementById("level");
         speed_setting = document.getElementsByName("speed");
         wall_setting = document.getElementsByName("wall");
         timerelm = document.getElementsByClassName("score")[0];
+        level=document.getElementsByClassName("score")[2];
         pause=document.getElementById("pause");
 
 
@@ -468,7 +540,7 @@
         };
         button_newgame_time_menu.onclick = function () {
             newGame(1)
-        }
+        };
         button_newgame_gameover.onclick = function () {
             newGame(0);
         };
