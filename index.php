@@ -8,7 +8,7 @@ outputNavBar("Home");
 ?>
     <!-- Carousel -->
     <section>
-        <div class="carousel slide test" data-ride="carousel" id="carouselGameplayIndicators">
+        <div class="carousel slide test    " data-ride="carousel" id="carouselGameplayIndicators">
             <ol class="carousel-indicators">
                 <li class="active" data-slide-to="0" data-target="#carouselGameplayIndicators"></li>
                 <li data-slide-to="1" data-target="#carouselGameplayIndicators"></li>
