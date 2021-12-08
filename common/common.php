@@ -17,6 +17,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
         echo '<!-- Common CSS -->';
         echo '<link href="common/css/common.css" rel="stylesheet" type="text/css">';
+        echo '<link href="../common/css/toastr/toastr.css" rel="stylesheet">';
         echo '<!-- ' . $pageTitle . 'CSS -->';
         echo '<link href="css/' . $pagecss . '-style.css" rel="stylesheet" type="text/css">';
         echo ' <!-- Snake Fav ICON -->';
@@ -26,6 +27,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="../common/css/bootstrap/bootstrap.min.css" rel="stylesheet">';
         echo '<!-- Common CSS -->';
         echo '<link href="../common/css/common.css" rel="stylesheet" type="text/css">';
+        echo '<link href="../common/css/toastr/toastr.css" rel="stylesheet">';
         echo '<!-- ' . $pageTitle . 'CSS -->';
         echo '<link href="css/' . $pagecss . '-style.css" rel="stylesheet" type="text/css">';
         echo ' <!-- Snake Fav ICON -->';
@@ -50,7 +52,7 @@ function generateHeader($pageTitle, $pagecss)
         echo '<link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">';
     }
     echo '</head>';
-    echo '<body>';
+    echo '<body onload="return CheckSession()">';
 }
 
 /* Outputs NavigationBar with corresponding link */
@@ -110,12 +112,16 @@ function generateCommonJS($pagecss)
         echo '<script src="common/js/jquery/jquery.min.js"></script>';
         echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
         echo '<script src="common/js/bootstrap/bootstrap.min.js"></script>';
+        echo '<script src="common/js/toastr/toastr.js"></script>';
+        echo '<script src="common/js/common.js"></script>';
 
     } else {
         echo '<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->';
         echo '<script src="../common/js/jquery/jquery.min.js"></script>';
         echo '<!-- Include all compiled plugins (below), or include individual files as needed -->';
         echo '<script src="../common/js/bootstrap/bootstrap.min.js"></script>';
+        echo '<script src="../common/js/toastr/toastr.js"></script>';
+        echo '<script src="../common/js/common.js"></script>';
 
     }
     if (($pagecss == 'login') OR ($pagecss == 'register')) {
@@ -140,6 +146,9 @@ function generateCommonJS($pagecss)
         echo '<script src="vendor/datepicker/daterangepicker.js"></script>';
         echo '<!-- Main JS-->';
         echo '<script src="js/global.js"></script>';
+    }
+    if ($pagecss == 'play'){
+        echo '<script src="js/play.js"></script>';
     }
     echo '</html>';
 }

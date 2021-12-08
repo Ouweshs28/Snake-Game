@@ -24,11 +24,11 @@ outputNavBar("Help");
             <div class="card-body">
                 <ul class="card-text helpText">
                     <ul>
-                        <li><strong>(Normal / Expert Mode)</strong></li>
+                        <li><strong>(Arcade / Time Attack)</strong></li>
                     </ul>
                     <li>Don't run the snake into the wall, or his own tail: you die</li>
                     <ul>
-                        <li><strong>(Easy Mode)</strong></li>
+                        <li><strong>(Wall OFF)</strong></li>
                     </ul>
                     <li>You only die if you it your tail</li>
                     <ul>
@@ -40,17 +40,16 @@ outputNavBar("Help");
         </div>
         <!--GAMES MODES BOX-->
         <div class="card">
-            <h5 class="card-title text-center p-4">GAME MODES</h5>
+            <h5 class="card-title text-center p-4">Game Settings</h5>
             <img src="img/Levels.png" class="card-img-top" alt="levels">
             <div class="card-body">
                 <ul class="card-text helpText">
-                    <p><strong>Normal Mode (Easy/ Normal/ Expert)</strong></p>
-                    <li>Easy is for new players easy to play with less rules</li>
-                    <li>Normal is for people who are used to the game</li>
-                    <li>Expert is for the players who want a real challenge</li>
-                    <p class="text-center"><strong>Time Attack</strong></p>
-                    <li>This creates a new level of challenge with you being play as quick as you can achieve maximum
-                        score
+                    <p><strong>Snake speed</strong></p>
+                    <li>Slow : For new beginners </li>
+                    <li>Normal : People that are used to the game</li>
+                    <li>Fast : is for the players who want a real challenge</li>
+                    <p class="text-center"><strong>Wall Settings</strong></p>
+                    <li>To keep wall on or off
                     </li>
                 </ul>
             </div>
@@ -62,7 +61,7 @@ outputNavBar("Help");
             <div class="card-body">
                 <ul class="card-text helptext">
                     <li>Use your cursor keys: up, left, right, and down.</li>
-                    <li> Keyboard "P" may also be used for "Play" and "Pause"</li>
+                    <li> Keyboard "P" may also be used for "Play" and "Pause" NOTE: YOU CANNOT PAUSE in time attack</li>
                     <ul><strong>For left handed use:</strong></ul>
                     <li>W: UP</li>
                     <li>A: LEFT</li>

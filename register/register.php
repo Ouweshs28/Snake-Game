@@ -3,18 +3,18 @@
 include('../common/common.php');
 
 //Output header and navigation
-generateHeader("Snake- Register","register");
+generateHeader("Snake- Register", "register");
 outputNavBar("Register");
 ?>
+<script src="js/register.js"></script>
 <section>
-<div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
-    <div class="wrapper wrapper--w780">
-        <div class="card card-3">
-            <div class="card-heading"></div>
-            <!--TITLE -->
-            <div class="card-body">
-                <h2 class="title">Registration Info</h2>
-                <form method="POST">
+    <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading"></div>
+                <!--TITLE -->
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
                     <div class="input-group">
                         <input class="input--style-3" type="text" placeholder="Name" name="name">
                     </div>
@@ -22,7 +22,8 @@ outputNavBar("Register");
                         <input class="input--style-3" type="text" placeholder="Username" name="username">
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3 js-datepicker" type="text" placeholder="Birth Date" name="birthday">
+                        <input class="input--style-3 js-datepicker" type="text" placeholder="Birth Date"
+                               name="birthday">
                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                     </div>
                     <div class="input-group">
@@ -43,20 +44,24 @@ outputNavBar("Register");
                         <input class="input--style-3" type="text" placeholder="Phone" name="phone">
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Password" name="password">
+                        <input class="input--style-3" type="password" oninput="return PasswordCheck()"
+                               placeholder="Password" name="password">
                     </div>
                     <div class="input-group">
-                        <input class="input--style-3" type="password" placeholder="Confirm Password" name="confirmpassword">
+                        <input class="input--style-3" type="password" oninput="return PasswordCheck()"
+                               placeholder="Confirm Password" name="confirmpassword">
                     </div>
+                    <div id="wrongPass"></div>
+                    <div id="weakPass"></div>
                     <!--Button-->
                     <div class="p-t-10">
-                        <button class="btn-register btn--pill btn--green" type="submit">Submit</button>
+                        <button class="btn-register btn--pill btn--green" onclick="return RegisterUser();">Submit
+                        </button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </section>
 <?php
 // No parameter is needed for generateFooter

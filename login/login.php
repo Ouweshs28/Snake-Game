@@ -7,7 +7,7 @@ generateHeader("Snake-Sign In", "login");
 //Outputs Navbar for page name with correct folder structure
 outputNavBar("Login");
 ?>
-
+<script src="js/login.js"></script>
 <!-- Login Page Contents-->
 <div class="limiter">
     <div class="container-login100">
@@ -16,29 +16,23 @@ outputNavBar("Login");
                 <img src="img/Login.png" alt="IMG">
             </div>
 
-            <form class="login100-form validate-form">
+            <div class="login100-form validate-form">
 					<span class="login100-form-title">
 						Member Login
 					</span>
 
-                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
-                    <input class="input100" type="text" name="email" placeholder="Email">
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="email" id="loginEmail" placeholder="Email">
                     <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-							<i class="fa fa-envelope" aria-hidden="true"></i>
-						</span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate="Password is required">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="password" name="pass" id="loginPass" placeholder="Password">
                     <span class="focus-input100"></span>
-                    <span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button class="login100-form-btn" onclick="return UserLogin();">
                         Login
                     </button>
                 </div>
@@ -55,10 +49,9 @@ outputNavBar("Login");
                 <div class="text-center p-t-25">
                     <a class="txt2" href="../register/register.php">
                         Create your Account
-                        <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                     </a>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

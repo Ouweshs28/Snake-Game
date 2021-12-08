@@ -18,19 +18,19 @@ outputNavBar("Home");
                 <div class="carousel-item active">
                     <img alt="Gameplay image 1" class="d-block w-100" src="img/gameplay1.PNG">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Some temporary screenshots of a snake game</h5>
+                        <h5>Arcade Mode</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img alt="Gameplay image 2" class="d-block w-100" src="img/gameplay2.png">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Some temporary screenshots of a snake game</h5>
+                        <h5>Time attack</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img alt="Gameplay image 3" class="d-block w-100" src="img/gameplay3.png">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>Some temporary screenshots of a snake game</h5>
+                        <h5>With Wall OFF</h5>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,6 @@ outputNavBar("Home");
         </div>
     </section>
 <?php
-
 // Function to generate the footer
 //Takes isHome as an optional parameter as if it is the home directories are different
 generateFooter('true');
