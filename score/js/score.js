@@ -1,5 +1,5 @@
 //New Array to store all user registered in the array
-let userArray = new Array();
+let userArray = [];
 
 // Sorting users according to the scores
 userArray = SortScores();
@@ -7,16 +7,8 @@ GenerateTable();
 
 // Populating users in localstorage in an array
 function PopulateUsers() {
-    let arrayindex = 0;
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i);
-        if (key !== "email") {
-            let userkey = localStorage.getItem(key);
-            userArray[arrayindex] = JSON.parse(userkey);//Convert to object
-            arrayindex++;
-
-        }
-    }
+    let existingUsers= JSON.parse(localStorage.getItem("users"));
+    userArray= existingUsers;
     return userArray;
 }
 

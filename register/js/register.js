@@ -133,23 +133,19 @@ function PasswordCheck() {
  */
 function CheckExisting() {
     let exist = true;
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i);
-        if (key !== "email") {
-            let userkey = localStorage.getItem(key);
+    let existingUsers= JSON.parse(localStorage.getItem("users"));
+
+    for (let i = 0; i < existingUsers.length; i++) {
             username = document.getElementsByName("username")[0].value;
-            let users = JSON.parse(userkey);//Convert to object
-            if (username === users.username) {
+            if (username === existingUsers[i].username) {
                 toastr.error(username + " already exists please sign in or choose a different one");
                 return;
             }
             email = document.getElementsByName("email")[0].value;
-            if (email === users.email) {
+            if (email === existingUsers[i].email) {
                 toastr.error(email + " is already taken up, please sign in or choose a different one");
                 return;
             }
-
-        }
     }
     exist = false;
     return exist;
@@ -171,8 +167,13 @@ function CreateUser() {
     users.password = document.getElementsByName("password")[0].value;
     users.score = 0;
 
+    //get existing users
+    let existingUsers= JSON.parse(localStorage.getItem("users"));
+    //add new user to existing
+    existingUsers.push(users)
+
     //Store user
-    localStorage[users.email] = JSON.stringify(users);
+    localStorage["users"] = JSON.stringify(users);
     //Inform user of result
     toastr.success('User registered successfully');
     setTimeout('RedirectLogin()', 2000);

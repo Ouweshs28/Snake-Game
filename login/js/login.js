@@ -29,12 +29,20 @@ function RedirectPlay() {
     if not prompt the user
  */
 function CheckUser() {
+    let emailExist=false;
     email = document.getElementById("loginEmail").value;
     password = document.getElementById("loginPass").value;
-    if (localStorage[email] === undefined) {
+    let existingUsers= JSON.parse(localStorage.getItem("users"));
+
+    for (let i = 0; i < existingUsers.length; i++) {
+        if(existingUsers[i].email===email){
+            emailExist=true;
+            break;
+        }
+    }
+    if (emailExist) {
         //Inform user that they do not have an account
         toastr.warning("You do not have an account please create one");
-        return; //Do nothing else
     } else {//User has an account
         let users = JSON.parse(localStorage[email]);//Convert to object
         if (password === users.password) {//Successful login
